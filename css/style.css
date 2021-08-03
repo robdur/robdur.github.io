@@ -3,6 +3,22 @@ body{
     background-color: lightgray;
 }
 
+header{
+
+    background-color: black;
+    
+}
+
+footer{
+
+    background-color: black;
+    color: yellow;
+    position: absolute;
+    
+
+}
+
+
 h1{
 
     text-align: center;
@@ -14,12 +30,32 @@ img{
 
     width: 355px;
     height: 255px;
-    border-radius: 50%;
-    
+    border-radius: 50%; 
+    text-align: center; 
 
-    
+       
 
 }
+
+.articleOne{
+
+    float: left;
+    margin-top: 15px;
+    margin-left: 85px;
+}
+
+.articleTwo{
+
+    float: right;
+    margin-top: 15px;
+    margin-right: 85px;
+}
+
+
+
+
+
+
 
 
 
