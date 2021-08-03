@@ -1,15 +1,26 @@
 body{
 
-    background-color: silver;}
+    background-color: lightgray;
+}
+
+h1{
+
+    text-align: center;
+}
+
+
 
 img{
+
+    width: 355px;
+    height: 255px;
+    border-radius: 50%;
     
 
-    object-fit: cover;
-    float: left;
-    width: 20px;
-    height: 20px;
-
+    
 
 }
+
+
+
 
