@@ -1,37 +1,114 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
-<title>CommingSoon</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('./esteban-lopez-6yjAC0-OwkA-unsplash.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CleverKnopf · Durec</title>
+  <style>
+    :root{
+      --card-bg: rgba(0,0,0,.45);
+      --card-border: rgba(255,255,255,.18);
+      --text: #fff;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55)),
+        url("./esteban-lopez-6yjAC0-OwkA-unsplash.jpg") center / cover no-repeat;
+    }
+    .wrap{
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card{
+      width: min(720px, 92vw);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: clamp(18px, 4vw, 28px);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      text-align: center;
+    }
+    .logo-link{ display: inline-block; text-decoration: none; color: inherit; }
+    .logo{
+      width: min(420px, 80vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 18px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .sub{
+      margin: 0 0 18px;
+      opacity: .95;
+      line-height: 1.5;
+      font-size: 1.02rem;
+    }
+    .actions{
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: .2px;
+      transition: transform .08s ease, background .12s ease, border-color .12s ease;
+      user-select: none;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.18);
+      border-color: rgba(255,255,255,.35);
+      transform: translateY(-1px);
+    }
+    .btn:focus{
+      outline: 3px solid rgba(255,255,255,.35);
+      outline-offset: 3px;
+    }
+    .hint{
+      margin-top: 14px;
+      font-size: .92rem;
+      opacity: .85;
+    }
+  </style>
 </head>
 <body>
+  <main class="wrap">
+    <section class="card" aria-label="Links">
+      <!-- CleverKnopf: Logo ist direkt verlinkt -->
+      <a class="logo-link" href="https://www.cleverknopf.at" target="_blank" rel="noopener">
+        <img class="logo" src="./c1.png" alt="CleverKnopf" />
+      </a>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">365 days left</p>
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-  </div>
-</div>
+      <p class="sub">Unsere Seiten:</p>
 
+      <div class="actions">
+        <a class="btn" href="https://www.cleverknopf.at" target="_blank" rel="noopener">cleverknopf.at</a>
+        <a class="btn" href="https://www.durec.at" target="_blank" rel="noopener">durec.at</a>
+      </div>
+
+      <p class="hint">
+        Hinweis: Für <strong>durec.at</strong> kannst du später einfach ein Bild ergänzen
+        (z.B. als weiteres <code>&lt;img&gt;</code> wie oben).
+      </p>
+    </section>
+  </main>
 </body>
 </html>
