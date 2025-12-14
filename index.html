@@ -10,80 +10,97 @@
       --card-border: rgba(255,255,255,.18);
       --text: #fff;
     }
+
     html, body { height: 100%; }
     body{
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
+      /* Background beibehalten */
       background:
-        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55)),
-        url("./esteban-lopez-6yjAC0-OwkA-unsplash.jpg") center / cover no-repeat;
+        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.60)),
+        url("./background.jpg") center / cover no-repeat fixed;
     }
+
     .wrap{
       min-height: 100%;
       display: grid;
       place-items: center;
       padding: 24px;
     }
+
     .card{
       width: min(720px, 92vw);
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: clamp(18px, 4vw, 28px);
+      border-radius: 22px;
+      padding: clamp(18px, 4vw, 30px);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       box-shadow: 0 18px 60px rgba(0,0,0,.35);
       text-align: center;
     }
-    .logo-link{ display: inline-block; text-decoration: none; color: inherit; }
-    .logo{
-      width: min(420px, 80vw);
-      height: auto;
-      display: block;
-      margin: 0 auto 18px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    .sub{
+
+    .title{
       margin: 0 0 18px;
-      opacity: .95;
-      line-height: 1.5;
-      font-size: 1.02rem;
-    }
-    .actions{
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.25);
-      background: rgba(255,255,255,.12);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
       letter-spacing: .2px;
-      transition: transform .08s ease, background .12s ease, border-color .12s ease;
-      user-select: none;
+      opacity: .98;
     }
-    .btn:hover{
-      background: rgba(255,255,255,.18);
-      border-color: rgba(255,255,255,.35);
-      transform: translateY(-1px);
+
+    .links{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      justify-items: center;
+      align-items: start;
     }
-    .btn:focus{
+
+    @media (max-width: 520px){
+      .links{ grid-template-columns: 1fr; }
+    }
+
+    .pill{
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      padding: 10px 8px;
+      border-radius: 18px;
+      transition: transform .10s ease, background .12s ease, border-color .12s ease;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+    .pill:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.22);
+    }
+    .pill:focus{
       outline: 3px solid rgba(255,255,255,.35);
       outline-offset: 3px;
     }
-    .hint{
-      margin-top: 14px;
+
+    /* kleine runde Bilder */
+    .thumb{
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+      border: 2px solid rgba(255,255,255,.22);
+    }
+
+    .label{
+      font-weight: 700;
+      letter-spacing: .2px;
+      opacity: .95;
+    }
+    .url{
       font-size: .92rem;
       opacity: .85;
     }
@@ -91,23 +108,24 @@
 </head>
 <body>
   <main class="wrap">
-    <section class="card" aria-label="Links">
-      <!-- CleverKnopf: Logo ist direkt verlinkt -->
-      <a class="logo-link" href="https://www.cleverknopf.at" target="_blank" rel="noopener">
-        <img class="logo" src="./c1.png" alt="CleverKnopf" />
-      </a>
+    <section class="card" aria-label="Webseiten Links">
+      <h1 class="title">Unsere Webseiten</h1>
 
-      <p class="sub">Unsere Seiten:</p>
+      <div class="links">
+        <!-- link1: cleverknopf.at -->
+        <a class="pill" href="https://www.cleverknopf.at" target="_blank" rel="noopener" aria-label="CleverKnopf öffnen">
+          <img class="thumb" src="./link1.jpg" alt="CleverKnopf" />
+          <div class="label">CleverKnopf</div>
+          <div class="url">cleverknopf.at</div>
+        </a>
 
-      <div class="actions">
-        <a class="btn" href="https://www.cleverknopf.at" target="_blank" rel="noopener">cleverknopf.at</a>
-        <a class="btn" href="https://www.durec.at" target="_blank" rel="noopener">durec.at</a>
+        <!-- link2: durec.at -->
+        <a class="pill" href="https://www.durec.at" target="_blank" rel="noopener" aria-label="Durec öffnen">
+          <img class="thumb" src="./link2.jpg" alt="Durec" />
+          <div class="label">Durec</div>
+          <div class="url">durec.at</div>
+        </a>
       </div>
-
-      <p class="hint">
-        Hinweis: Für <strong>durec.at</strong> kannst du später einfach ein Bild ergänzen
-        (z.B. als weiteres <code>&lt;img&gt;</code> wie oben).
-      </p>
     </section>
   </main>
 </body>
